@@ -1,6 +1,6 @@
 package practice_day12_okulProje;
 
-public class Ogrenci extends Kisi{//const control edilecek
+public class Ogrenci extends Kisi{
 
     private String ogrenciNo;
     private String sinif;

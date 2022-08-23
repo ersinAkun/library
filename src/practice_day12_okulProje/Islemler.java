@@ -13,8 +13,7 @@ public class Islemler {
     static List<Kisi> ogrncList=new ArrayList<>();
     static Scanner scan = new Scanner(System.in);
     static String kisiTuru;
-    //static yazmamizin sebebi tum methodlardan ulasamk icin gokte ki ay
-    //gokteki ay gibi heryeden ulaşılabilsin
+
 
 
 
@@ -26,7 +25,7 @@ public class Islemler {
         System.out.println("2- ÖĞRETMEN İŞLEMLERİ");
         System.out.println("Q- ÇIKIŞ");
 
-        String secim=scan.next().toUpperCase();//kullanici kucuk harf girse bile buyuk harfe cevirdik cunku kontrol buyuk harfle yapcaz
+        String secim=scan.next().toUpperCase();//kullanici kucuk harf girse bile buyuk harfe cevirdik
         switch(secim){
             case "1":
                 kisiTuru="OGRENCI";
@@ -60,23 +59,23 @@ public class Islemler {
 
         switch (secilenIslem) {
             case 1:
-                ekle();//yapildi
-                islemMenusu();//method call ile islem menusune taekrar gider
+                ekle();
+                islemMenusu();
                 break;
             case 2:
-                arama();//yapildi
+                arama();
                 islemMenusu();
                 break;
             case 3:
-                listeleme();//yapildi
+                listeleme();
                 islemMenusu();
                 break;
             case 4:
-                silme();//yapildi
+                silme();
                 islemMenusu();
                 break;
             case 5:
-                girisPaneli();//yani ana menu
+                girisPaneli();
                 break;
             case 0:
                 cikis();
@@ -93,9 +92,9 @@ public class Islemler {
         System.exit(0);
     }
 
-    private static void silme() {//silme islemi de tc ile ypilacak
+    private static void silme() {
         System.out.println("**** "+ kisiTuru+" silme sayfasina hosgeldin");
-        boolean flag=true;//bayrak havada aksiyon basla
+        boolean flag=true;
 
         if (kisiTuru.equalsIgnoreCase("OGRENCI")){
             System.out.println("silmek istedigin kimlik no gir");
@@ -105,17 +104,17 @@ public class Islemler {
             for (Kisi each:ogrncList ) {
                 if (each.getKimlikNo().equals(silinecekKimlikNo)){
                     System.out.println("silinen ogrenci "+each.getAdSoyad());
-                    ogrncList.remove(each);//o ogrenciyi siler
+                    ogrncList.remove(each);
                     flag=false;
                     break;
                 }
-            }if (flag){//eger girilen tc list te yok ise bu if calisir
+            }if (flag){
                 System.out.println("bu tc ile ogrenci yok silinemedi");
             }
 
 
 
-        }else{//ogretmen isslemleri icin kontrol
+        }else{
             System.out.println("silinecek ogretmenin kimlik no gir");
             String silinecekKimlikNo=scan.next().replaceAll(" ","");
 
@@ -127,7 +126,7 @@ public class Islemler {
                     break;
 
                 }
-            }if (flag){//kullanicin girdigi tc kimlik no hic bir ogretmene eslesmedi demek
+            }if (flag){
                 System.out.println("bu tc ile ogretmen bulunamadi ve silinemedi");
             }
         }
@@ -145,37 +144,35 @@ public class Islemler {
 
     private static void arama() {
         System.out.println("**** "+ kisiTuru+" arama sayfasina hosgeldin");
-        boolean flag =true;//bayrak yukarda true olan her saart devam eder aksiyon baslasin
-        //trick var bayrak ile ilgili
+        boolean flag =true;
 
-        if (kisiTuru.equalsIgnoreCase("OGRENCI")){//bu satiirda ogrenci ariyorsa calisir
-            //dummy
+        if (kisiTuru.equalsIgnoreCase("OGRENCI")){
             System.out.println("kimlik no giriniz");
-            String arananKimlikNo= scan.next().replaceAll(" ","");//kullanici bosluk girerse diye bosluk hiclik yapilfi
+            String arananKimlikNo= scan.next().replaceAll(" ","");
 
             for (Kisi w:ogrncList ) {
-                if (w.getKimlikNo().equals(arananKimlikNo)){//kullanicinin girdigi tc ile ogrenci listinde ki tc lerden eslesen var mi
+                if (w.getKimlikNo().equals(arananKimlikNo)){
                     System.out.println("aradiginiz ogrenci " +w.getAdSoyad());
                     flag=false;
                 }
 
-            }if (flag){//flag true ise hala bu if body si calisir. yani aranan tc ile ogrenci yok demektir
+            }if (flag){
                 System.out.println("aranan tc ile ogrenci yok ");
-            }//94 den 107 ye kadar ogrenci islemleri
-        }else{// ogretmen icin caliscak
+            }
+        }else{
 
             System.out.println("kimlik no giriniz");
-            String arananKimlikNo= scan.next().replaceAll(" ","");//kullanici bosluk girerse diye bosluk hiclik yapilfi
-            //dummy
+            String arananKimlikNo= scan.next().replaceAll(" ","");
+
             for (Kisi w:ogrtmnList ) {
-                if (w.getKimlikNo().equals(arananKimlikNo)){//kullanicinin girdigi tc ile ogrenci listinde ki tc lerden eslesen var mi
-                    System.out.println("aradiginiz ogretmen " +w.getAdSoyad());//Kisi classin kulldigi icin tsc ile islem yapmis
+                if (w.getKimlikNo().equals(arananKimlikNo)){
+                    System.out.println("aradiginiz ogretmen " +w.getAdSoyad());
                     flag=false;
                 }
 
-            }if (flag){//flag true ise hala bu if body si calisir. yani aranan tc ile ogrenci yok demektir
+            }if (flag){
                 System.out.println("aranan tc ile ogretmen yok ");
-            }//else body si komple ogretmen icin tasarlandi
+            }
 
         }
 
@@ -187,7 +184,7 @@ public class Islemler {
     }
 
 
-    private static void ekle() {//bu method hem ogrenci hem de ogretmen eklemek icin tasarlandi
+    private static void ekle() {
         System.out.println("**** "+ kisiTuru+" ekleme sayfasina hosgeldin");
         System.out.println("isim soyisim gir");
         scan.nextLine();
@@ -206,11 +203,11 @@ public class Islemler {
             System.out.println("sinif gir");
             String sinif= scan.next().replaceAll(" ","");
 
-            Ogrenci ogrenci=new Ogrenci(adSoyad,kimliNo,yas,ogrenciNo,sinif);//parameter siralamasi onemli
+            Ogrenci ogrenci=new Ogrenci(adSoyad,kimliNo,yas,ogrenciNo,sinif);
             ogrncList.add(ogrenci);
 
-        }else{//cozum berk karanfil bey den
-            scan.nextLine();//dummy6 kod hata almamak icin//
+        }else{
+            scan.nextLine();
             System.out.println("bolum gir");
             String bolum= scan.nextLine();
             System.out.println("sicil no gir");

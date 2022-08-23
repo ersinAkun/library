@@ -4,7 +4,7 @@ public class Kisi {
 
     private String adSoyad;
     private String kimlikNo;
-    private int yas;// herkesin ortak ozelligi
+    private int yas;
 
     public Kisi(String adSoyad, String kimlikNo, int yas) {
         this.adSoyad = adSoyad;
