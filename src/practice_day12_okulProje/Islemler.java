@@ -89,7 +89,7 @@ public class Islemler {
 
     private static void cikis() {
         System.out.println("Yine bekleriz okulumuza hoscakalin");
-        System.exit(0);
+        System.exit(0);    // cikis
     }
 
     private static void silme() {
