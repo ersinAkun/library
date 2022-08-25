@@ -8,7 +8,7 @@ BİR OKUL YÖNETİM PLATFORMU KODLAYINIZ.
 
     2.  Program başladığında Kullanıcıya, Öğretmen ve Öğrenci işlemlerini seçebilmesi için
         Aşağıdaki gibi bir menü gösterilsin.
-
+        //printf denenebilir
     ====================================
      ÖĞRENCİ VE ÖĞRETMEN YÖNETİM PANELİ
     ====================================
