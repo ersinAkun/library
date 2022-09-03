@@ -159,7 +159,7 @@ public class Islemler {
             }if (flag){
                 System.out.println("aranan tc ile ogrenci yok ");
             }
-        }else{
+        }else{   // kisi turu ogretmense else calisir
 
             System.out.println("kimlik no giriniz");
             String arananKimlikNo= scan.next().replaceAll(" ","");
@@ -177,12 +177,7 @@ public class Islemler {
         }
 
 
-
-
-
-
     }
-
 
     private static void ekle() {
         System.out.println("**** "+ kisiTuru+" ekleme sayfasina hosgeldin");
